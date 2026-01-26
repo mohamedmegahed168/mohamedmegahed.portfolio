@@ -16,7 +16,6 @@ interface FormData {
   message: string;
 }
 export default function Contact() {
-  const [isDark, setIsDark] = useState(false);
   const {
     register,
     handleSubmit,
@@ -33,6 +32,7 @@ export default function Contact() {
   const [submitStatus, setSubmitStatus] = useState<boolean>(false);
 
   async function onSubmit(data: FormData) {
+    console.log("hello");
     try {
       const response = await fetch("/api/send", {
         method: "POST",
@@ -42,14 +42,18 @@ export default function Contact() {
         body: JSON.stringify(data),
       });
       if (response.ok) {
+        console.log(response);
         setSubmitStatus(true);
         reset();
       }
     } catch (error) {
+      console.error(error);
       setError("root", {
         type: "server",
         message: "An unexpected error occured. Please try again later",
       });
+    } finally {
+      setSubmitStatus(false);
     }
   }
 
@@ -154,6 +158,12 @@ export default function Contact() {
                   onSubmit={handleSubmit(onSubmit)}
                   className="flex flex-col gap-6"
                 >
+                  {errors.root && (
+                    <p className="text-red-500 text-sm ">
+                      {" "}
+                      {errors.root.message}{" "}
+                    </p>
+                  )}
                   <div className="flex flex-col gap-2">
                     <label className="text-[#2f3e46] dark:text-gray-200 text-xs font-bold uppercase tracking-widest">
                       Full Name
