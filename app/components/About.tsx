@@ -1,6 +1,6 @@
 "use client";
-import { motion, Variants } from "framer-motion";
-import { Palette, Terminal, Zap, Code2 } from "lucide-react";
+import { motion } from "framer-motion";
+import { Code2 } from "lucide-react";
 import Image from "next/image";
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },

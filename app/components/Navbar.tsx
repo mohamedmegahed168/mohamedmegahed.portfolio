@@ -1,6 +1,6 @@
 "use client";
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Code2 } from "lucide-react";
 import Link from "next/link";
 
@@ -16,6 +16,15 @@ export default function Navbar() {
   const [activeTab, setActiveTab] = useState("Home");
   const [hoveredTab, setHoveredTab] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <>
@@ -23,9 +32,10 @@ export default function Navbar() {
         <header className="flex items-center justify-between whitespace-nowrap border border-[#2F3E46]/10 dark:border-white/10 bg-white/70 dark:bg-[#171b18]/70 backdrop-blur-xl px-6 py-3 rounded-full w-full max-w-[1050px] shadow-sm transition-all duration-300">
           <Link
             href="#home"
+            onClick={() => setActiveTab("Home")}
             className="flex items-center gap-2 cursor-pointer group"
           >
-            <div className="bg-[#84a98c] text-white  px-2 py-2 rounded-full shadow-lg z-20 animate-bounce-slow">
+            <div className="bg-[#84a98c] text-white px-2 py-2 rounded-full shadow-lg z-20 group-hover:scale-110 transition-transform duration-300">
               <Code2 size={20} />
             </div>
             <h2 className="text-[#2f3e46] dark:text-white text-lg font-bold tracking-tight">
@@ -62,8 +72,8 @@ export default function Navbar() {
                 <span
                   className={`relative z-10 ${
                     activeTab === link.name
-                      ? "text-[#2f3e46]  font-semibold"
-                      : "text-[#2f3e46]/70  hover:text-[#2f3e46]"
+                      ? "text-[#2f3e46] font-semibold"
+                      : "text-[#2f3e46]/70 hover:text-[#2f3e46]"
                   }`}
                 >
                   {link.name}
@@ -73,13 +83,19 @@ export default function Navbar() {
           </nav>
 
           <div className="flex items-center gap-4">
-            <button className="cursor-pointer hidden md:flex bg-[#2F3E46] text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all hover:scale-105 active:scale-95 shadow-sm hover:shadow-[#84a98c]/20">
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cursor-pointer hidden md:flex bg-[#2F3E46] text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all hover:scale-105 active:scale-95 shadow-sm hover:shadow-[#84a98c]/20"
+            >
               My resume
-            </button>
+            </a>
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 text-[#2f3e46] dark:text-white hover:bg-[#2F3E46]/5 rounded-full transition-colors"
+              className="md:hidden p-2 text-[#2f3e46] dark:text-white hover:bg-[#2F3E46]/5 rounded-full transition-colors z-50 relative"
+              aria-label="Toggle Menu"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -87,27 +103,56 @@ export default function Navbar() {
         </header>
       </div>
 
-      {isMobileMenuOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          className="fixed top-24 left-4 right-4 z-40 bg-white dark:bg-[#1e2420] border border-[#2F3E46]/10 rounded-2xl shadow-2xl p-6 md:hidden flex flex-col gap-4"
-        >
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-lg font-medium text-[#2f3e46] dark:text-white hover:text-[#84a98c]"
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 md:hidden"
+            />
+
+            <motion.div
+              initial={{ opacity: 0, y: -20, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -20, scale: 0.95 }}
+              transition={{ duration: 0.2 }}
+              className="fixed top-24 left-4 right-4 z-50 bg-white dark:bg-[#1e2420] border border-[#2F3E46]/10 rounded-2xl shadow-2xl p-6 md:hidden flex flex-col gap-4"
             >
-              {link.name}
-            </Link>
-          ))}
-          <button className="w-full bg-[#84a98c] text-white py-3 rounded-xl font-bold">
-            My resume
-          </button>
-        </motion.div>
-      )}
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => {
+                    setActiveTab(link.name);
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className={`text-lg font-medium transition-colors ${
+                    activeTab === link.name
+                      ? "text-[#84a98c] font-bold"
+                      : "text-[#2f3e46] dark:text-white hover:text-[#84a98c]"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
+
+              <div className="h-[1px] bg-[#2F3E46]/10 w-full my-1"></div>
+
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full bg-[#84a98c] text-white py-3 rounded-xl font-bold text-center active:scale-95 transition-transform"
+              >
+                My resume
+              </a>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </>
   );
 }
