@@ -32,7 +32,6 @@ export default function Contact() {
   const [submitStatus, setSubmitStatus] = useState<boolean>(false);
 
   async function onSubmit(data: FormData) {
-    console.log("hello");
     try {
       const response = await fetch("/api/send", {
         method: "POST",
@@ -42,7 +41,6 @@ export default function Contact() {
         body: JSON.stringify(data),
       });
       if (response.ok) {
-        console.log(response);
         setSubmitStatus(true);
         reset();
       }

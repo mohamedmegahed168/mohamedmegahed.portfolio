@@ -78,33 +78,14 @@ export default function About() {
                 </h2>
               </motion.div>
 
-              <div className="space-y-6 text-[#2F3E46]/80 dark:text-white/80 text-lg leading-relaxed font-light">
-                <p className="border-l-4 border-[#84a98c]/30 pl-4 md:pl-0 md:border-0">
-                  I am a Frontend Web Developer with a strong focus on building
-                  responsive web applications. I believe that a website should
-                  be more than just lines of code—it should be a unique
-                  experience.
-                </p>
-                <p>
-                  My development philosophy centers on three core pillars:{" "}
-                  <span className="inline-flex items-center gap-1 font-bold text-[#2f3e46] dark:text-white">
-                    Simplicity{" "}
-                    <span className="w-1 h-1 rounded-full bg-[#84a98c]"></span>
-                  </span>{" "}
-                  <span className="inline-flex items-center gap-1 font-bold text-[#2f3e46] dark:text-white">
-                    Elegance{" "}
-                    <span className="w-1 h-1 rounded-full bg-[#84a98c]"></span>
-                  </span>{" "}
-                  <span className="inline-flex items-center gap-1 font-bold text-[#2f3e46] dark:text-white">
-                    Utility
-                  </span>
-                  .
-                </p>
-                <p>
-                  I don&apos;t just build for screens; I build for people. By
-                  prioritizing intuitive UX and clean architecture, I ensure
-                  that every digital product I create not only looks beautiful
-                  but serves a genuine purpose.
+              <div className="space-y-6 text-[#2F3E46]/80 dark:text-white/80 text-lg text-left leading-relaxed font-light">
+                <p className="border-l-4 border-[#84a98c]/30 pl-4 md:pl-0 md:border-0 ">
+                  I am a Frontend Web Developer crafting responsive, thoughtful
+                  web experiences. I believe a website is more than code — it is
+                  a feeling, a flow, a conversation. Guided by simplicity,
+                  elegance, and utility, I shape interfaces with intention. I
+                  build not just for screens, but for people, creating digital
+                  spaces that truly matter.
                 </p>
               </div>
 

@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Code2 } from "lucide-react";
 import Link from "next/link";
 
 const navLinks = [
@@ -21,14 +21,17 @@ export default function Navbar() {
     <>
       <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
         <header className="flex items-center justify-between whitespace-nowrap border border-[#2F3E46]/10 dark:border-white/10 bg-white/70 dark:bg-[#171b18]/70 backdrop-blur-xl px-6 py-3 rounded-full w-full max-w-[1050px] shadow-sm transition-all duration-300">
-          <div className="flex items-center gap-2 cursor-pointer group">
-            <div className="flex items-center justify-center size-8 rounded-full bg-[#84a98c]/20 group-hover:bg-[#84a98c] transition-colors duration-300">
-              <span className="text-[#84a98c] group-hover:text-white font-bold text-lg">{`</>`}</span>
+          <Link
+            href="#home"
+            className="flex items-center gap-2 cursor-pointer group"
+          >
+            <div className="bg-[#84a98c] text-white  px-2 py-2 rounded-full shadow-lg z-20 animate-bounce-slow">
+              <Code2 size={20} />
             </div>
             <h2 className="text-[#2f3e46] dark:text-white text-lg font-bold tracking-tight">
-              Mohamed Megahed<span className="text-[#84a98c]">.</span>
+              Mohamed Megahed
             </h2>
-          </div>
+          </Link>
 
           <nav className="hidden md:flex items-center gap-2">
             {navLinks.map((link) => (

@@ -3,32 +3,32 @@ import { motion } from "framer-motion";
 export default function TimeLine() {
   const timeline = [
     {
-      year: "2018 - 2022",
+      year: "October 2018 - July 2022",
       title: "Student at the Faculty of Science",
       location: "Aswan University",
       description:
-        "Leading the design system initiative and overseeing the UX strategy for a global sustainability platform.",
+        "My journey began in zoology, where curiosity taught me to observe, question, and understand complexity. Today, I carry that same curiosity into frontend development, shaping thoughtful interfaces from ideas, patterns, and purpose.",
     },
     {
-      year: "2023 - 2024",
+      year: "January 2023 - March 2024",
       title: "Military Service",
       location: "Cairo Intensive Security Forces",
       description:
-        "Developed custom web experiences for Fortune 500 clients using React, Node.js, and cloud architectures.",
+        "This period has reshaped my patience, strengthened my sense of responsibility, and taught me endurance in quiet moments. Those lessons remain with me, influencing how I think, grow, and approach every challenge I face today.",
     },
     {
-      year: "2024 - 2025",
+      year: "July 2024 - June 2025",
       title: "International account advisor",
       location: "Vodafone UK limited",
       description:
-        "Focused on building interactive marketing components and maintaining high-quality pixel-perfect CSS.",
+        "Customer service taught me to listen with patience and respond with understanding. It quietly shaped how I connect with people, stay composed, and navigate moments that require empathy and care.",
     },
     {
-      year: "Present",
+      year: "June 2025 - Present",
       title: "Frontend web developer",
       location: "",
       description:
-        "Started professional journey by helping local businesses establish their first digital presence.",
+        "Working as a frontend developer has strengthened my creativity, focus, and appreciation for nuance. Each project quietly teaches me to craft with intention, embrace challenges, and shape ideas into meaningful experiences.",
     },
   ];
   return (

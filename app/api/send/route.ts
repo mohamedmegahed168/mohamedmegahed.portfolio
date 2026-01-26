@@ -6,19 +6,20 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { user_name, user_email, message } = body;
+    console.log(body);
+    const { userName, email, message } = body;
     const htmlMessage = `
         <h3>New Contact Form Submission</h3>
-        <p><strong>Name:</strong> ${user_name}</p>
-        <p><strong>Email:</strong> ${user_email}</p>
+        <p><strong>Name:</strong> ${userName}</p>
+        <p><strong>Email:</strong> ${email}</p>
         <p><strong>Message:</strong></p>
         <p>${message}</p>
       `;
     const data = await resend.emails.send({
       from: "Contact Form <onboarding@resend.dev>",
       to: ["m.megahed168@gmail.com"],
-      replyTo: user_email,
-      subject: `New message from ${user_name}`,
+      replyTo: email,
+      subject: `New message from ${userName}`,
       text: message,
       html: htmlMessage,
     });
