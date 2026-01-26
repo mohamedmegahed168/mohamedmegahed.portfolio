@@ -2,12 +2,14 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 
 const navLinks = [
-  { name: "Home", href: "#" },
-  { name: "About", href: "#" },
-  { name: "Projects", href: "#" },
-  { name: "Contact", href: "#" },
+  { name: "Home", href: "#home" },
+  { name: "About", href: "#about" },
+  { name: "Projects", href: "#projects" },
+  { name: "Journey", href: "#journey" },
+  { name: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
@@ -18,22 +20,19 @@ export default function Navbar() {
   return (
     <>
       <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
-        {/* CHANGED: max-w updated to [1050px] to match Hero */}
         <header className="flex items-center justify-between whitespace-nowrap border border-[#2F3E46]/10 dark:border-white/10 bg-white/70 dark:bg-[#171b18]/70 backdrop-blur-xl px-6 py-3 rounded-full w-full max-w-[1050px] shadow-sm transition-all duration-300">
-          {/* Logo Area */}
           <div className="flex items-center gap-2 cursor-pointer group">
             <div className="flex items-center justify-center size-8 rounded-full bg-[#84a98c]/20 group-hover:bg-[#84a98c] transition-colors duration-300">
-              <span className="text-[#84a98c] group-hover:text-white font-bold text-lg">{`{}`}</span>
+              <span className="text-[#84a98c] group-hover:text-white font-bold text-lg">{`</>`}</span>
             </div>
             <h2 className="text-[#2f3e46] dark:text-white text-lg font-bold tracking-tight">
-              Dev<span className="text-[#84a98c]">.</span>
+              Mohamed Megahed<span className="text-[#84a98c]">.</span>
             </h2>
           </div>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-2">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
                 href={link.href}
                 onClick={() => setActiveTab(link.name)}
@@ -66,13 +65,13 @@ export default function Navbar() {
                 >
                   {link.name}
                 </span>
-              </a>
+              </Link>
             ))}
           </nav>
 
           <div className="flex items-center gap-4">
-            <button className="hidden md:flex bg-[#2F3E46] dark:bg-white text-white dark:text-[#2F3E46] px-6 py-2.5 rounded-full text-sm font-bold transition-all hover:scale-105 active:scale-95 shadow-lg hover:shadow-[#84a98c]/20">
-              Hire Me
+            <button className="cursor-pointer hidden md:flex bg-[#2F3E46] text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all hover:scale-105 active:scale-95 shadow-sm hover:shadow-[#84a98c]/20">
+              My resume
             </button>
 
             <button
@@ -93,16 +92,16 @@ export default function Navbar() {
           className="fixed top-24 left-4 right-4 z-40 bg-white dark:bg-[#1e2420] border border-[#2F3E46]/10 rounded-2xl shadow-2xl p-6 md:hidden flex flex-col gap-4"
         >
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
               href={link.href}
               className="text-lg font-medium text-[#2f3e46] dark:text-white hover:text-[#84a98c]"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
           <button className="w-full bg-[#84a98c] text-white py-3 rounded-xl font-bold">
-            Hire Me
+            My resume
           </button>
         </motion.div>
       )}

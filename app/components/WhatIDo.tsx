@@ -1,25 +1,29 @@
 "use client";
 import { Smartphone, Layers, Rocket } from "lucide-react";
 import { motion } from "framer-motion";
-import { staggerContainer, fadeInUp } from "./About";
 export default function WhatIDo() {
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
+  const staggerContainer = {
+    visible: { transition: { staggerChildren: 0.2 } },
+  };
   const services = [
     {
-      id: 1,
       title: "Responsive Design",
       description:
         "Building pixel-perfect, adaptive layouts that provide a seamless experience across mobile, tablet, and desktop.",
       icon: Smartphone,
     },
     {
-      id: 2,
       title: "Modern Architecture",
       description:
         "Developing scalable, modular web apps using Next.js and React component patterns for long-term maintainability.",
       icon: Layers,
     },
     {
-      id: 3,
       title: "Performance & SEO",
       description:
         "Optimizing applications for blazing fast load times, Core Web Vitals, and accessibility (a11y) compliance.",
@@ -27,7 +31,7 @@ export default function WhatIDo() {
     },
   ];
   return (
-    <section className="py-12 mb-20">
+    <section id="whatIDo" className="py-12 px-8 mb-20">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -48,11 +52,11 @@ export default function WhatIDo() {
         viewport={{ once: true }}
         className="grid grid-cols-1 md:grid-cols-3 gap-6"
       >
-        {services.map((service) => {
+        {services.map((service, index) => {
           const IconComponent = service.icon;
           return (
             <motion.div
-              key={service.id}
+              key={index}
               variants={fadeInUp}
               className="group flex flex-col gap-5 rounded-2xl border border-[#2F3E46]/5 dark:border-white/10 bg-white dark:bg-white/5 p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-[#84a98c]/30"
             >

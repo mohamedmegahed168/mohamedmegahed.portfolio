@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import WhatIDo from "./components/WhatIDo";
 import TimeLine from "./components/TimeLine";
+import Contact from "./components/Contact";
 export default function Home() {
   return (
     <div>
@@ -14,6 +15,7 @@ export default function Home() {
       <WhatIDo />
       <TimeLine />
       <Projects />
+      <Contact />
       <Footer />
     </div>
   );

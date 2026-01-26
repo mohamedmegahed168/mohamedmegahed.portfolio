@@ -17,7 +17,10 @@ export default function Hero() {
   };
 
   return (
-    <div className="bg-[#F5F5F0] dark:bg-[#171b18] text-[#2F3E46] dark:text-white transition-colors duration-300 relative overflow-hidden min-h-screen flex flex-col">
+    <div
+      id="home"
+      className="bg-[#F5F5F0] dark:bg-[#171b18] text-[#2F3E46] dark:text-white transition-colors duration-300 relative overflow-hidden min-h-screen flex flex-col"
+    >
       <div className="absolute top-[-20%] right-[-10%] w-[500px] h-[500px] bg-[#84a98c]/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-[#2F3E46]/5 dark:bg-white/5 rounded-full blur-[100px] pointer-events-none" />
 
@@ -153,9 +156,6 @@ export default function Hero() {
                       rx="4"
                       fill="#1A202C"
                     />
-                    <circle cx="120" cy="130" r="4" fill="#FF5F56" />
-                    <circle cx="135" cy="130" r="4" fill="#FFBD2E" />
-                    <circle cx="150" cy="130" r="4" fill="#27C93F" />
                     <g transform="translate(250, 220)">
                       <circle
                         cx="0"
