@@ -141,14 +141,14 @@ export default function Navbar() {
 
               <div className="h-[1px] bg-[#2F3E46]/10 w-full my-1"></div>
 
-              <a
+              <Link
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full bg-[#84a98c] text-white py-3 rounded-xl font-bold text-center active:scale-95 transition-transform"
               >
                 My resume
-              </a>
+              </Link>
             </motion.div>
           </>
         )}

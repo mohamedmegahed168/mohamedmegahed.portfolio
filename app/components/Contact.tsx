@@ -21,11 +21,27 @@ interface FormData {
 
 const socialLinks = [
   { label: "Gmail", icon: SiGmail, href: "mailto:m.megahed168@gmail.com" },
-  { label: "LinkedIn", icon: SiLinkedin, href: "#" },
-  { label: "Facebook", icon: SiFacebook, href: "#" },
-  { label: "Twitter", icon: SiX, href: "#" },
-  { label: "GitHub", icon: SiGithub, href: "#" },
-  { label: "Instagram", icon: SiInstagram, href: "#" },
+  {
+    label: "LinkedIn",
+    icon: SiLinkedin,
+    href: "https://www.linkedin.com/in/mohamed-megahed-ab5096338/",
+  },
+  {
+    label: "Facebook",
+    icon: SiFacebook,
+    href: "https://www.facebook.com/megomgahed550",
+  },
+  { label: "Twitter", icon: SiX, href: "https://x.com/Mohamed4382437" },
+  {
+    label: "GitHub",
+    icon: SiGithub,
+    href: "https://github.com/mohamedmegahed168",
+  },
+  {
+    label: "Instagram",
+    icon: SiInstagram,
+    href: "https://www.instagram.com/m.mgahed168/",
+  },
 ];
 
 const fadeInUp: Variants = {
