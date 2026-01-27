@@ -20,12 +20,8 @@ export default function Hero() {
   return (
     <div
       id="home"
-      className="bg-[#F5F5F0] dark:bg-[#171b18] text-[#2F3E46] dark:text-white transition-colors duration-300 relative overflow-hidden min-h-screen flex flex-col"
+      className="bg-[#F5F5F0]  text-[#2F3E46]  transition-colors duration-300 relative overflow-hidden min-h-screen flex flex-col"
     >
-      {/* 
-         PERFORMANCE: Replaced heavy blurs with lightweight Radial Gradients 
-         This ensures smooth scrolling on mobile.
-      */}
       <div
         className="absolute top-[-5%] right-[-10%] w-[400px] h-[400px] md:top-[-20%] md:right-[-20%] md:w-[800px] md:h-[800px] pointer-events-none"
         style={{
@@ -44,7 +40,6 @@ export default function Hero() {
       <section className="flex-grow flex flex-col justify-center items-center w-full px-6 md:px-8 pt-36 md:pt-44 pb-12 relative">
         <div className="max-w-[1050px] w-full mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* TEXT SECTION */}
             <motion.div
               className="flex flex-col gap-6 order-1 lg:order-1"
               variants={containerVariants}
@@ -52,7 +47,6 @@ export default function Hero() {
               animate="visible"
             >
               <div className="flex flex-col gap-5">
-                {/* Badge: Centered on Mobile, Left on Desktop */}
                 <motion.div
                   variants={itemVariants}
                   className="flex items-center justify-center lg:justify-start gap-3"
@@ -61,17 +55,14 @@ export default function Hero() {
                   <span className="text-[#84a98c] font-bold tracking-[0.2em] uppercase text-xs">
                     Frontend Developer
                   </span>
-                  {/* Optional: Second line for symmetry only on mobile if desired, 
-                      but cleaner without it on desktop */}
                 </motion.div>
 
-                {/* Headline */}
                 <motion.h1
                   variants={itemVariants}
-                  className="text-[#2F3E46] dark:text-white text-4xl sm:text-5xl md:text-6xl font-black leading-[1.1] tracking-tight text-center lg:text-left"
+                  className="text-[#2F3E46]  text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.1] tracking-tight text-center lg:text-left"
                 >
                   Crafting digital <br />
-                  <span className="relative inline-block text-[#2F3E46] dark:text-white">
+                  <span className="relative inline-block text-[#2F3E46] ">
                     experiences
                     <svg
                       className="absolute w-full h-3 -bottom-1 left-0 text-[#84a98c]"
@@ -90,29 +81,26 @@ export default function Hero() {
                   with code.
                 </motion.h1>
 
-                {/* Paragraph */}
                 <motion.p
                   variants={itemVariants}
-                  className="text-[#2F3E46]/70 dark:text-white/70 text-lg leading-relaxed max-w-lg font-light text-center lg:text-left mx-auto lg:mx-0"
+                  className="text-[#2F3E46]/70  text-lg leading-relaxed max-w-lg font-light text-center lg:text-left mx-auto lg:mx-0"
                 >
                   I build accessible, pixel-perfect, and performant web
                   applications that blend{" "}
-                  <span className="font-medium text-[#2F3E46] dark:text-white">
+                  <span className="font-medium text-[#2F3E46] ">
                     minimalist design
                   </span>{" "}
                   with clean architecture.
                 </motion.p>
               </div>
 
-              {/* Buttons */}
               <motion.div
                 variants={itemVariants}
                 className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4"
               >
                 <Link
                   href="#projects"
-                  // w-full on mobile (easy tap), w-fit on desktop
-                  className="w-full sm:w-fit group bg-[#2F3E46] dark:bg-white text-white dark:text-[#2F3E46] px-8 py-3.5 rounded-full font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center justify-center gap-3 text-sm md:text-base"
+                  className="w-full sm:w-fit group bg-[#2F3E46]  text-white  px-8 py-3.5 rounded-full font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center justify-center gap-3 text-sm md:text-base"
                 >
                   View Projects
                   <ArrowRight
@@ -122,22 +110,20 @@ export default function Hero() {
                 </Link>
                 <Link
                   href="#about"
-                  // w-full on mobile, w-fit on desktop
-                  className="w-full sm:w-fit text-center cursor-pointer group bg-transparent border border-[#2F3E46]/20 hover:border-[#2F3E46]/50 text-[#2F3E46] dark:text-white dark:border-white/20 dark:hover:border-white/50 px-8 py-3.5 rounded-full font-bold transition-all hover:bg-[#2F3E46]/5 dark:hover:bg-white/5 text-sm md:text-base"
+                  className="w-full sm:w-fit text-center cursor-pointer group bg-transparent border border-[#2F3E46]/20 hover:border-[#2F3E46]/50 text-[#2F3E46]  px-8 py-3.5 rounded-full font-bold transition-all hover:bg-[#2F3E46]/5 text-sm md:text-base"
                 >
                   About Me
                 </Link>
               </motion.div>
             </motion.div>
 
-            {/* SVG VISUAL */}
             <div className="order-1 lg:order-2 flex justify-center items-center relative mt-8 lg:mt-0">
               <motion.div
                 className="relative w-full aspect-square max-w-[380px] lg:max-w-[450px]"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
-                style={{ willChange: "transform" }} // Performance Hint
+                style={{ willChange: "transform" }}
               >
                 <motion.div
                   animate={{ y: [0, -15, 0] }}

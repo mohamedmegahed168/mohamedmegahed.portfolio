@@ -29,7 +29,7 @@ export default function Navbar() {
   return (
     <>
       <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
-        <header className="flex items-center justify-between whitespace-nowrap border border-[#2F3E46]/10 dark:border-white/10 bg-white/70 dark:bg-[#171b18]/70 backdrop-blur-xl px-6 py-3 rounded-full w-full max-w-[1050px] shadow-sm transition-all duration-300">
+        <header className="flex items-center justify-between whitespace-nowrap border border-[#2F3E46]/10  bg-white/70 backdrop-blur-xl px-6 py-3 rounded-full w-full max-w-[1050px] shadow-sm transition-all duration-300">
           <Link
             href="#home"
             onClick={() => setActiveTab("Home")}
@@ -38,7 +38,7 @@ export default function Navbar() {
             <div className="bg-[#84a98c] text-white px-2 py-2 rounded-full shadow-lg z-20 group-hover:scale-110 transition-transform duration-300">
               <Code2 size={20} />
             </div>
-            <h2 className="text-[#2f3e46] dark:text-white text-lg font-bold tracking-tight">
+            <h2 className="text-[#2f3e46]  text-lg font-bold tracking-tight">
               Mohamed Megahed
             </h2>
           </Link>
@@ -56,7 +56,7 @@ export default function Navbar() {
                 {hoveredTab === link.name && (
                   <motion.div
                     layoutId="nav-hover"
-                    className="absolute inset-0 bg-[#2F3E46]/5 dark:bg-white/10 rounded-full -z-10"
+                    className="absolute inset-0 bg-[#2F3E46]/5  rounded-full -z-10"
                     transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                   />
                 )}
@@ -94,7 +94,7 @@ export default function Navbar() {
 
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 text-[#2f3e46] dark:text-white hover:bg-[#2F3E46]/5 rounded-full transition-colors z-50 relative"
+              className="md:hidden p-2 text-[#2f3e46] hover:bg-[#2F3E46]/5 rounded-full transition-colors z-50 relative"
               aria-label="Toggle Menu"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -119,7 +119,7 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -20, scale: 0.95 }}
               transition={{ duration: 0.2 }}
-              className="fixed top-24 left-4 right-4 z-50 bg-white dark:bg-[#1e2420] border border-[#2F3E46]/10 rounded-2xl shadow-2xl p-6 md:hidden flex flex-col gap-4"
+              className="fixed top-24 left-4 right-4 z-50 bg-white border border-[#2F3E46]/10 rounded-2xl shadow-2xl p-6 md:hidden flex flex-col gap-4"
             >
               {navLinks.map((link) => (
                 <Link

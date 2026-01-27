@@ -27,16 +27,16 @@ export default function Projects() {
   return (
     <div
       id="projects"
-      className="bg-[#fcfaf7] dark:bg-[#171b18] text-[#171b18] dark:text-[#fcfaf7] transition-colors duration-300 min-h-screen flex flex-col"
+      className="bg-[#fcfaf7] text-[#171b18] transition-colors duration-300 min-h-screen flex flex-col"
     >
       <main className="flex-grow flex flex-col items-center">
         <div className="w-full max-w-[1200px] px-6 lg:px-10 pt-16 pb-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#171b18]/10 dark:border-[#fcfaf7]/10 pb-12">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#171b18]/10 pb-12">
             <div className="max-w-2xl">
-              <h1 className="text-5xl md:text-6xl font-black tracking-tighter text-[#171b18] dark:text-[#fcfaf7] mb-4">
+              <h1 className="text-5xl md:text-6xl font-black tracking-tighter text-[#171b18] mb-4">
                 Selected <span className="text-[#84a98c]">Projects</span>
               </h1>
-              <p className="text-[#171b18]/60 dark:text-[#fcfaf7]/60 text-lg leading-relaxed">
+              <p className="text-[#171b18]/60  text-lg leading-relaxed">
                 A curated selection of my latest work, focusing on minimalist
                 interfaces, robust full-stack architecture, and user-centric
                 design principles.
@@ -49,9 +49,9 @@ export default function Projects() {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="group flex flex-col gap-5 rounded-2xl bg-white dark:bg-white/5 border border-[#2F3E46]/10 dark:border-white/10 p-3 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                className="group flex flex-col gap-5 rounded-2xl bg-white  border border-[#2F3E46]/10  p-3 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
-                <div className="relative h-60 w-full rounded-xl bg-[#F5F5F0] dark:bg-[#1a202c] overflow-hidden p-6 flex items-center justify-center">
+                <div className="relative h-60 w-full rounded-xl bg-[#F5F5F0]  overflow-hidden p-6 flex items-center justify-center">
                   <Image
                     height={400}
                     width={800}
@@ -61,7 +61,7 @@ export default function Projects() {
                   />
                 </div>
                 <div className="flex flex-col gap-3 px-2 pb-2">
-                  <p className="text-[#171b18]/70 dark:text-[#fcfaf7]/70 text-sm  leading-relaxed">
+                  <p className="text-[#171b18]/70  text-sm  leading-relaxed">
                     {project.description}
                   </p>
 

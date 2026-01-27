@@ -17,7 +17,7 @@ export default function About() {
   return (
     <div
       id="about"
-      className="bg-[#F5F5F0] dark:bg-[#171b18] text-[#2f3e46] dark:text-gray-200 transition-colors duration-300 min-h-screen"
+      className="bg-[#F5F5F0] text-[#2f3e46]  transition-colors duration-300 min-h-screen"
     >
       <main className="flex flex-col items-center pt-32 pb-20 overflow-hidden">
         <div className="flex flex-col max-w-[1050px] w-full px-6">
@@ -32,7 +32,7 @@ export default function About() {
               variants={fadeInUp}
               className="flex-shrink-0 relative group"
             >
-              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-white dark:border-[#2F3E46] shadow-2xl overflow-hidden z-10">
+              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-white shadow-2xl overflow-hidden z-10">
                 <Image
                   src="/my-photo.jpg"
                   width={600}
@@ -56,7 +56,7 @@ export default function About() {
                   </span>
                 </div>
 
-                <h2 className="text-[#2f3e46] dark:text-white text-3xl font-black leading-[1.1]">
+                <h2 className="text-[#2f3e46] text-3xl font-black leading-[1.1]">
                   Bridging the gap between <br />
                   <span className="text-[#84a98c] relative inline-block">
                     functionality
@@ -78,7 +78,7 @@ export default function About() {
                 </h2>
               </motion.div>
 
-              <div className="space-y-6 text-[#2F3E46]/80 dark:text-white/80 text-lg text-left leading-relaxed font-light">
+              <div className="space-y-6 text-[#2F3E46]/80 text-lg text-left leading-relaxed font-light">
                 <p className="border-l-4 border-[#84a98c]/30 pl-4 md:pl-0 md:border-0 ">
                   I am a Frontend Web Developer crafting responsive, thoughtful
                   web experiences. I believe a website is more than code — it is
@@ -90,14 +90,14 @@ export default function About() {
               </div>
 
               <motion.div variants={fadeInUp} className="pt-4">
-                <p className="text-xs font-bold uppercase tracking-widest text-[#2F3E46]/40 dark:text-white/40 mb-4">
+                <p className="text-xs font-bold uppercase tracking-widest text-[#2F3E46]/40 mb-4">
                   Technological Toolbox
                 </p>
                 <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                   {skills.map((skill, index) => (
                     <span
                       key={index}
-                      className="px-4 py-2 bg-white dark:bg-white/5 border border-[#2F3E46]/10 dark:border-white/10 text-[#2f3e46] dark:text-white rounded-lg text-sm font-medium hover:border-[#84a98c] hover:text-[#84a98c] transition-all cursor-default shadow-sm"
+                      className="px-4 py-2 bg-white border border-[#2F3E46]/10 text-[#2f3e46] rounded-lg text-sm font-medium hover:border-[#84a98c] hover:text-[#84a98c] transition-all cursor-default shadow-sm"
                     >
                       {skill}
                     </span>

@@ -86,7 +86,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="bg-[#fdfcf0] dark:bg-[#171b18] text-[#2f3e46] dark:text-white transition-colors duration-300 min-h-screen flex flex-col justify-center"
+      className="bg-[#fdfcf0] text-[#2f3e46]  transition-colors duration-300 min-h-screen flex flex-col justify-center"
     >
       <div className="pt-32 pb-20 px-6">
         <div className="max-w-[1000px] mx-auto">
@@ -124,7 +124,7 @@ export default function Contact() {
                       <Mail size={20} />
                     </div>
                     <Link href="mailto:m.megahed168@gmail.com">
-                      <p className="text-[#2f3e46]/40 dark:text-white/40 text-xs font-bold uppercase tracking-wider mb-1">
+                      <p className="text-[#2f3e46]/40  text-xs font-bold uppercase tracking-wider mb-1">
                         Email Me
                       </p>
                       <p className="text-lg font-medium hover:text-[#84a98c] transition-colors">
@@ -138,7 +138,7 @@ export default function Contact() {
                       <Phone size={20} />
                     </div>
                     <Link href="tel:01153039862">
-                      <p className="text-[#2f3e46]/40 dark:text-white/40 text-xs font-bold uppercase tracking-wider mb-1">
+                      <p className="text-[#2f3e46]/40 text-xs font-bold uppercase tracking-wider mb-1">
                         Call Me
                       </p>
                       <p className="text-lg font-medium hover:text-[#84a98c] transition-colors">
@@ -163,7 +163,7 @@ export default function Contact() {
                         href={link.href}
                         target="_blank"
                         rel="noreferrer"
-                        className="flex items-center justify-center w-10 h-10 rounded-full border border-[#2F3E46]/10 dark:border-white/10 text-[#2f3e46]/60 dark:text-white/60 hover:bg-[#84a98c] hover:border-[#84a98c] hover:text-white transition-all duration-300 hover:-translate-y-1"
+                        className="flex items-center justify-center w-10 h-10 rounded-full border border-[#2F3E46]/10  text-[#2f3e46]/60 hover:bg-[#84a98c] hover:border-[#84a98c] hover:text-white transition-all duration-300 hover:-translate-y-1"
                       >
                         <IconComponent size={16} />
                       </Link>
@@ -178,7 +178,7 @@ export default function Contact() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="w-full bg-white dark:bg-[#1e231f] p-8 md:p-10 rounded-3xl border border-[#2f3e46]/5 dark:border-white/5 shadow-2xl shadow-[#2f3e46]/5 relative overflow-hidden"
+              className="w-full bg-white p-8 md:p-10 rounded-3xl border border-[#2f3e46]/5  shadow-2xl shadow-[#2f3e46]/5 relative overflow-hidden"
             >
               <AnimatePresence mode="wait">
                 {!isSuccess ? (
@@ -197,7 +197,7 @@ export default function Contact() {
                     )}
 
                     <div className="flex flex-col gap-2">
-                      <label className="text-xs font-bold uppercase tracking-widest text-[#2f3e46]/80 dark:text-white/80">
+                      <label className="text-xs font-bold uppercase tracking-widest text-[#2f3e46]/80 ">
                         Full Name
                       </label>
                       <input
@@ -207,7 +207,7 @@ export default function Contact() {
                         })}
                         placeholder="Jane Doe"
                         aria-invalid={!!errors.userName}
-                        className={`w-full rounded-xl border bg-[#fdfcf0]/50 dark:bg-[#171b18]/50 p-4 outline-none transition-all focus:border-[#84a98c] focus:ring-1 focus:ring-[#84a98c] ${errors.userName ? "border-red-400" : "border-[#2f3e46]/10 dark:border-white/10"}`}
+                        className={`w-full rounded-xl border bg-[#fdfcf0]/50 p-4 outline-none transition-all focus:border-[#84a98c] focus:ring-1 focus:ring-[#84a98c] ${errors.userName ? "border-red-400" : "border-[#2f3e46]/10 "}`}
                       />
                       {errors.userName && (
                         <span className="text-red-500 text-xs">
@@ -217,7 +217,7 @@ export default function Contact() {
                     </div>
 
                     <div className="flex flex-col gap-2">
-                      <label className="text-xs font-bold uppercase tracking-widest text-[#2f3e46]/80 dark:text-white/80">
+                      <label className="text-xs font-bold uppercase tracking-widest text-[#2f3e46]/80 ">
                         Email Address
                       </label>
                       <input
@@ -230,7 +230,7 @@ export default function Contact() {
                           },
                         })}
                         placeholder="hello@example.com"
-                        className={`w-full rounded-xl border bg-[#fdfcf0]/50 dark:bg-[#171b18]/50 p-4 outline-none transition-all focus:border-[#84a98c] focus:ring-1 focus:ring-[#84a98c] ${errors.email ? "border-red-400" : "border-[#2f3e46]/10 dark:border-white/10"}`}
+                        className={`w-full rounded-xl border bg-[#fdfcf0]/50  p-4 outline-none transition-all focus:border-[#84a98c] focus:ring-1 focus:ring-[#84a98c] ${errors.email ? "border-red-400" : "border-[#2f3e46]/10 "}`}
                       />
                       {errors.email && (
                         <span className="text-red-500 text-xs">
@@ -240,7 +240,7 @@ export default function Contact() {
                     </div>
 
                     <div className="flex flex-col gap-2">
-                      <label className="text-xs font-bold uppercase tracking-widest text-[#2f3e46]/80 dark:text-white/80">
+                      <label className="text-xs font-bold uppercase tracking-widest text-[#2f3e46]/80 ">
                         Your Message
                       </label>
                       <textarea
@@ -249,7 +249,7 @@ export default function Contact() {
                         })}
                         placeholder="Tell me about your project..."
                         rows={5}
-                        className={`w-full rounded-xl border bg-[#fdfcf0]/50 dark:bg-[#171b18]/50 p-4 outline-none transition-all focus:border-[#84a98c] focus:ring-1 focus:ring-[#84a98c] resize-none ${errors.message ? "border-red-400" : "border-[#2f3e46]/10 dark:border-white/10"}`}
+                        className={`w-full rounded-xl border bg-[#fdfcf0]/50 p-4 outline-none transition-all focus:border-[#84a98c] focus:ring-1 focus:ring-[#84a98c] resize-none ${errors.message ? "border-red-400" : "border-[#2f3e46]/10 "}`}
                       />
                       {errors.message && (
                         <span className="text-red-500 text-xs">
@@ -289,10 +289,10 @@ export default function Contact() {
                     <div className="w-20 h-20 bg-[#84a98c]/10 rounded-full flex items-center justify-center text-[#84a98c] mb-2">
                       <CheckCircle2 size={40} />
                     </div>
-                    <h3 className="text-2xl font-bold text-[#2f3e46] dark:text-white">
+                    <h3 className="text-2xl font-bold text-[#2f3e46] ">
                       Message Sent!
                     </h3>
-                    <p className="text-[#2f3e46]/60 dark:text-white/60 max-w-xs">
+                    <p className="text-[#2f3e46]/60 max-w-xs">
                       Thanks for reaching out, {useState.name}. I&apos;ll get
                       back to you as soon as possible.
                     </p>
