@@ -54,6 +54,7 @@ export default function About() {
                   <span className="text-[#84a98c] font-bold tracking-[0.2em] uppercase text-sm">
                     About Me
                   </span>
+                  <span className="h-[1px] w-12 bg-[#84a98c] sm:hidden"></span>
                 </div>
 
                 <h2 className="text-[#2f3e46] text-3xl font-black leading-[1.1]">

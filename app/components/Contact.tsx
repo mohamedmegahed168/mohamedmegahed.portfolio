@@ -127,7 +127,7 @@ export default function Contact() {
                       <p className="text-[#2f3e46]/40  text-xs font-bold uppercase tracking-wider mb-1">
                         Email Me
                       </p>
-                      <p className="text-lg font-medium hover:text-[#84a98c] transition-colors">
+                      <p className="text-md font-medium hover:text-[#84a98c] transition-colors">
                         m.megahed168@gmail.com
                       </p>
                     </Link>
@@ -141,7 +141,7 @@ export default function Contact() {
                       <p className="text-[#2f3e46]/40 text-xs font-bold uppercase tracking-wider mb-1">
                         Call Me
                       </p>
-                      <p className="text-lg font-medium hover:text-[#84a98c] transition-colors">
+                      <p className="text-md font-medium hover:text-[#84a98c] transition-colors">
                         01153039862
                       </p>
                     </Link>

@@ -55,6 +55,7 @@ export default function Hero() {
                   <span className="text-[#84a98c] font-bold tracking-[0.2em] uppercase text-xs">
                     Frontend Developer
                   </span>
+                  <span className="h-[1px] w-8 bg-[#84a98c] sm:hidden"></span>
                 </motion.div>
 
                 <motion.h1
